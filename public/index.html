@@ -593,8 +593,9 @@
                     <div class="bg-white dark:bg-d-surface p-7 rounded-2xl border border-cream-dark dark:border-d-border flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-3 mb-4">
-                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClPb7kF1Xi_O1gvnC7MVDpNJ41DXbdGKR2bjTQaTKzzmn2dSobCIgJJoTHC5mcDNqgD90PAclJiTPEj82awi8CPGDyzpW_4QSKHLnwCSBtaL5gIdmy3tCYpDHL-ZJ6T9mhTcP8D7Y5GDuzeUCQ3bdBYt7bmbaTRVrT3b-bUycVU9o2YCIpytYyCAfXZ0EssRTOaj36ZMJK-osARwhdOlyLG61xWQZYzXgrYkhxjMBPDrHz6aSIy8ckoVxG_qg1dkMkdKVaq5x0zl0"
-                                     alt="Carlos Ruiz" class="w-11 h-11 rounded-full object-cover">
+                                <div class="w-11 h-11 rounded-full bg-cream-dark dark:bg-d-elevated flex items-center justify-center flex-shrink-0 border border-cream-dark dark:border-d-border">
+                                    <span class="material-symbols-outlined text-ink-faint text-xl" style="font-variation-settings:'FILL' 0;">person</span>
+                                </div>
                                 <div>
                                     <p class="text-sm font-semibold text-ink dark:text-d-text">Carlos Ruiz</p>
                                     <div class="flex text-gold mt-0.5">
@@ -617,8 +618,9 @@
                     <div class="bg-white dark:bg-d-surface p-7 rounded-2xl border border-cream-dark dark:border-d-border flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-3 mb-4">
-                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvIb-wrJOXkJD_2hjZ5GDoRIeQFLpqOwePJLQPIfmn-YkGCisPv3w-WMnB_vi_gqLbfj5Ibros3vhOOzPVel7KckHvAaGDFt-F9hTD0u0ilbQtR8yGS6XNpuzv09GrC974NDSxN5MRnamxPRjU3BYvwfxiwDkpid-5-0nyEKthceYby1MNWVTZ1z-k6flz41d8EnFOKzFr0eN3kyiTveb92cLAg04-lqoztGRG_89Emg8wuIPj_fqAchadb3sKPATKYxgxBAQEmsU"
-                                     alt="Elena Gómez" class="w-11 h-11 rounded-full object-cover">
+                                <div class="w-11 h-11 rounded-full bg-cream-dark dark:bg-d-elevated flex items-center justify-center flex-shrink-0 border border-cream-dark dark:border-d-border">
+                                    <span class="material-symbols-outlined text-ink-faint text-xl" style="font-variation-settings:'FILL' 0;">person</span>
+                                </div>
                                 <div>
                                     <p class="text-sm font-semibold text-ink dark:text-d-text">Elena Gómez</p>
                                     <div class="flex text-gold mt-0.5">
@@ -641,8 +643,9 @@
                     <div class="bg-white dark:bg-d-surface p-7 rounded-2xl border border-cream-dark dark:border-d-border flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-3 mb-4">
-                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc_EsNPRYBqhVXshFOYxGRfvXw5TwSjz5L-WDwr6k7Zgrwitac94SPdA3VZ8-Ml-SfSmmVxXPOnRkO6wBGmEQ35P-uSxAvwnasHgSggYAqAVoS-izWh3fKOL5KThzy9Qbr99cI-uSdSood58BNXf7sQDukkycmeDhqRiwi_3J_SlOBpvIuQXdfUInMJS6ULZkSz4ldD3Rk9xE4hkoVty4zv26U4-T2CY9Poq-11P96KVhorhaDvuSdLxGdMNo1rEAhh5k1F6n1W2U"
-                                     alt="Marcos Toledo" class="w-11 h-11 rounded-full object-cover">
+                                <div class="w-11 h-11 rounded-full bg-cream-dark dark:bg-d-elevated flex items-center justify-center flex-shrink-0 border border-cream-dark dark:border-d-border">
+                                    <span class="material-symbols-outlined text-ink-faint text-xl" style="font-variation-settings:'FILL' 0;">person</span>
+                                </div>
                                 <div>
                                     <p class="text-sm font-semibold text-ink dark:text-d-text">Marcos Toledo</p>
                                     <div class="flex text-gold mt-0.5">
@@ -1201,22 +1204,10 @@
 
 
         // ── 9. INTERSECTION OBSERVER ────────────────────────────────────
-        const sectionNames = {
-            'categorias': 'Categorías',
-            'productos':  'Productos',
-            'servicios':  'Servicios',
-            'reseñas':    'Reseñas',
-        };
-
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    if (!entry.target.dataset.notified) {
-                        const name = sectionNames[entry.target.id];
-                        if (name) showToast(`Sección: ${name}`, 'info');
-                        entry.target.dataset.notified = 'true';
-                    }
                 }
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
