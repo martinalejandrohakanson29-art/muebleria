@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SillasPro Elite — Confort y Estilo para tu Espacio</title>
+    <meta name="description" content="Tienda especializada en sillería ergonómica de élite, escritorios y muebles de oficina premium. Servicio de reparación y restauración profesional con garantía certificada.">
+    <meta name="keywords" content="sillas ergonómicas, escritorios, muebles de oficina, sillones ejecutivos, ergonomía, SillasPro Elite">
+    <meta name="author" content="SillasPro Elite">
+    <meta property="og:title" content="SillasPro Elite — Confort y Estilo para tu Espacio">
+    <meta property="og:description" content="Sillería ergonómica de élite con diseño técnico de última generación para la máxima productividad.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "ink":        "#1C1917",
+                        "ink-muted":  "#57534E",
+                        "ink-faint":  "#A8A29E",
+                        "cream":      "#FAF7F2",
+                        "cream-dark": "#F0EBE3",
+                        "gold":       "#B8953A",
+                        "gold-light": "#E8C96A",
+                        "gold-pale":  "#F5EAC8",
+                        "rust":       "#C0392B",
+                        "rust-light": "#F4B7B0",
+                        "pine":       "#2C6E49",
+                        "pine-light": "#A8D5B5",
+                        /* dark mode */
+                        "d-bg":       "#141414",
+                        "d-surface":  "#1E1E1E",
+                        "d-elevated": "#272727",
+                        "d-border":   "#333333",
+                        "d-text":     "#F0EDE8",
+                        "d-muted":    "#A09A94",
+                        "wa-green":   "#25D366",
+                    },
+                    fontFamily: {
+                        serif:    ["'Playfair Display'", "Georgia", "serif"],
+                        sans:     ["'DM Sans'", "system-ui", "sans-serif"],
+                        mono:     ["'DM Mono'", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg":      "0.75rem",
+                        "xl":      "1rem",
+                        "2xl":     "1.5rem",
+                        "3xl":     "2rem",
+                        "full":    "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* ── Base resets ───────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { font-family: 'DM Sans', system-ui, sans-serif; }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+            vertical-align: middle;
+        }
+
+        /* ── Scrollbar ─────────────────────────────────────── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #C8BFB5; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B8953A; }
+
+        /* ── Reveal animations ─────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ── Hero section ──────────────────────────────────── */
+        .hero-overlay {
+            background: linear-gradient(
+                105deg,
+                rgba(20, 16, 12, 0.80) 0%,
+                rgba(28, 25, 23, 0.55) 50%,
+                rgba(20, 16, 12, 0.20) 100%
+            );
+        }
+
+        /* ── Trust badges strip ────────────────────────────── */
+        .trust-strip {
+            background: linear-gradient(90deg, #1C1917 0%, #2C2622 50%, #1C1917 100%);
+        }
+
+        /* ── Product cards ─────────────────────────────────── */
+        .product-card {
+            transition: box-shadow 0.35s ease, transform 0.35s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 20px 60px rgba(184, 149, 58, 0.15);
+            transform: translateY(-4px);
+        }
+        .product-card .card-img img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .product-card:hover .card-img img { transform: scale(1.07); }
+
+        /* ── WhatsApp pulse ────────────────────────────────── */
+        @keyframes wa-pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        #wa-fab { animation: wa-pulse 2.2s ease-out infinite; }
+        #wa-fab:hover { animation: none; }
+
+        /* ── Category card hover ───────────────────────────── */
+        .cat-card {
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .cat-card:hover {
+            box-shadow: 0 16px 48px rgba(184, 149, 58, 0.14);
+            transform: translateY(-4px);
+        }
+
+        /* ── Decorative rule ───────────────────────────────── */
+        .title-rule {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #B8953A;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        .title-rule::before,
+        .title-rule::after {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        /* ── Section badge ─────────────────────────────────── */
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 100px;
+            border: 1px solid rgba(184,149,58,0.3);
+            background: rgba(184,149,58,0.08);
+            color: #B8953A;
+        }
+        .dark .section-badge {
+            border-color: rgba(232,201,106,0.3);
+            background: rgba(232,201,106,0.08);
+            color: #E8C96A;
+        }
+        .section-badge .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: ping-dot 1.6s ease-in-out infinite;
+        }
+        @keyframes ping-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        /* ── Cart qty button ───────────────────────────────── */
+        .qty-btn {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px;
+            transition: background 0.2s, color 0.2s;
+            background: #F0EBE3;
+            color: #1C1917;
+            border: none; cursor: pointer;
+        }
+        .qty-btn:hover { background: #B8953A; color: #fff; }
+        .dark .qty-btn { background: #333; color: #F0EDE8; }
+        .dark .qty-btn:hover { background: #E8C96A; color: #1C1917; }
+
+        /* ── Modal fade/scale ──────────────────────────────── */
+        .modal-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-panel {
+            transform: scale(0.95) translateY(8px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-overlay.open .modal-panel {
+            transform: scale(1) translateY(0);
+        }
+
+        /* ── Drawer slide ──────────────────────────────────── */
+        #cart-drawer-panel  { transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1); }
+        #mobile-menu-panel  { transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1); }
+        #search-modal-panel { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+
+        /* ── Gold accent underline on headings ─────────────── */
+        .gold-underline {
+            background: linear-gradient(90deg, #B8953A, #E8C96A 60%, transparent);
+            background-size: 100% 2px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            padding-bottom: 4px;
+        }
+
+        /* ── Dark mode bg ──────────────────────────────────── */
+        .dark body { background-color: #141414; color: #F0EDE8; }
+    </style>
+</head>
+<body class="bg-cream text-ink font-sans min-h-screen flex flex-col transition-colors duration-300">
+
+    <!-- ═══════════════════════════════════════════════════════ NAVBAR ═════ -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-d-surface/95 backdrop-blur-md border-b border-cream-dark dark:border-d-border transition-colors duration-300">
+        <div class="flex justify-between items-center w-full px-5 md:px-10 max-w-[1280px] mx-auto h-[72px]">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <span class="material-symbols-outlined text-gold text-3xl" style="font-variation-settings:'FILL' 1;">chair_alt</span>
+                <span class="font-serif text-xl font-semibold text-ink dark:text-d-text tracking-tight">
+                    SillasPro<span class="text-gold"> Elite</span>
+                </span>
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-7">
+                <button onclick="triggerSectionComingSoon('Oficina')"   class="text-sm font-medium text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light transition-colors py-1">Oficina</button>
+                <button onclick="triggerSectionComingSoon('Hogar')"     class="text-sm font-medium text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light transition-colors py-1">Hogar</button>
+                <button onclick="triggerSectionComingSoon('Ergonomía')" class="text-sm font-medium text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light transition-colors py-1">Ergonomía</button>
+                <button onclick="triggerSectionComingSoon('Nosotros')"  class="text-sm font-medium text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light transition-colors py-1">Nosotros</button>
+                <button onclick="triggerSectionComingSoon('Soporte')"   class="text-sm font-medium text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light transition-colors py-1">Soporte</button>
+            </nav>
+
+            <!-- Action buttons -->
+            <div class="flex items-center gap-2">
+                <button onclick="toggleDarkMode()" class="flex items-center gap-1.5 px-3 py-2 rounded-full border border-ink/15 dark:border-d-border text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light hover:border-gold/40 hover:bg-cream dark:hover:bg-d-elevated transition-all text-xs font-semibold" aria-label="Cambiar tema">
+                    <span class="material-symbols-outlined text-[16px] dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-[16px] hidden dark:inline">light_mode</span>
+                    <span class="dark:hidden">Oscuro</span>
+                    <span class="hidden dark:inline">Claro</span>
+                </button>
+                <button onclick="openSearchModal()" class="p-2 rounded-full text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light hover:bg-cream dark:hover:bg-d-elevated transition-all" aria-label="Buscar productos">
+                    <span class="material-symbols-outlined text-[22px]">search</span>
+                </button>
+                <button onclick="toggleCartDrawer(true)" class="relative p-2 rounded-full text-ink-muted dark:text-d-muted hover:text-gold dark:hover:text-gold-light hover:bg-cream dark:hover:bg-d-elevated transition-all" aria-label="Ver carrito">
+                    <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+                    <span id="cart-badge" class="absolute top-0.5 right-0.5 bg-rust text-white text-[9px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center scale-0 transition-transform duration-300">0</span>
+                </button>
+                <button onclick="triggerSectionComingSoon('Comprar Ahora')" class="hidden lg:flex items-center gap-1.5 bg-ink dark:bg-gold text-white dark:text-ink px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gold hover:text-ink dark:hover:bg-gold-light transition-all duration-200 ml-1">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">storefront</span>
+                    Comprar Ahora
+                </button>
+                <button onclick="toggleMobileMenu(true)" class="md:hidden p-2 rounded-full text-ink-muted dark:text-d-muted hover:bg-cream dark:hover:bg-d-elevated transition-all" aria-label="Abrir menú">
+                    <span class="material-symbols-outlined text-[24px]">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════════════ MOBILE DRAWER ═════ -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-ink/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="mobile-menu-panel" class="absolute inset-y-0 left-0 w-4/5 max-w-[320px] bg-white dark:bg-d-surface shadow-2xl flex flex-col justify-between -translate-x-full pointer-events-auto p-6">
+            <div>
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-gold" style="font-variation-settings:'FILL' 1;">chair_alt</span>
+                        <span class="font-serif text-lg font-semibold text-ink dark:text-d-text">SillasPro <span class="text-gold">Elite</span></span>
+                    </div>
+                    <button onclick="toggleMobileMenu(false)" class="p-1 text-ink-muted dark:text-d-muted">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-1">
+                    <button onclick="toggleMobileMenu(false);triggerSectionComingSoon('Oficina')"   class="flex items-center justify-between py-3.5 px-4 rounded-xl text-sm font-medium text-ink dark:text-d-text hover:bg-cream dark:hover:bg-d-elevated transition-colors">Oficina   <span class="material-symbols-outlined text-ink-faint text-sm">chevron_right</span></button>
+                    <button onclick="toggleMobileMenu(false);triggerSectionComingSoon('Hogar')"     class="flex items-center justify-between py-3.5 px-4 rounded-xl text-sm font-medium text-ink dark:text-d-text hover:bg-cream dark:hover:bg-d-elevated transition-colors">Hogar     <span class="material-symbols-outlined text-ink-faint text-sm">chevron_right</span></button>
+                    <button onclick="toggleMobileMenu(false);triggerSectionComingSoon('Ergonomía')" class="flex items-center justify-between py-3.5 px-4 rounded-xl text-sm font-medium text-ink dark:text-d-text hover:bg-cream dark:hover:bg-d-elevated transition-colors">Ergonomía <span class="material-symbols-outlined text-ink-faint text-sm">chevron_right</span></button>
+                    <button onclick="toggleMobileMenu(false);triggerSectionComingSoon('Nosotros')"  class="flex items-center justify-between py-3.5 px-4 rounded-xl text-sm font-medium text-ink dark:text-d-text hover:bg-cream dark:hover:bg-d-elevated transition-colors">Nosotros  <span class="material-symbols-outlined text-ink-faint text-sm">chevron_right</span></button>
+                    <button onclick="toggleMobileMenu(false);triggerSectionComingSoon('Soporte')"   class="flex items-center justify-between py-3.5 px-4 rounded-xl text-sm font-medium text-ink dark:text-d-text hover:bg-cream dark:hover:bg-d-elevated transition-colors">Soporte   <span class="material-symbols-outlined text-ink-faint text-sm">chevron_right</span></button>
+                </nav>
+            </div>
+            <div class="space-y-3">
+                <button onclick="toggleMobileMenu(false);triggerSectionComingSoon('Comprar Ahora')" class="w-full bg-ink dark:bg-gold text-white dark:text-ink py-3.5 rounded-xl font-semibold text-sm hover:bg-gold hover:text-ink transition-all">
+                    Comprar Ahora
+                </button>
+                <p class="text-center text-xs text-ink-faint">Ergonomía certificada · Garantía incluida</p>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="flex-grow">
+
+        <!-- ═══════════════════════════════════════════════════════ HERO ═════ -->
+        <section class="relative w-full h-[600px] md:h-[680px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOVYiskN2FI3t1Efq3r6ANgFBv0i6CerVDKotYNr0oUB1ftAIvLESRM7R3DYD0UsnCQoKD_D0tKBktLRi277zOkkCzW1cDb2ANFs1AXyLgcsi3uCmHxsYxip970g-Ju5BalP0vEvtF8ocjohDHVxaZLYo_V3RFwEC3LyLFJ1zsctVJ8bf0AOKj70fnV7RfVqXArsJeFTEmlwOmNtSd1OOTDhIpKVIR58xwqdbpZh31YsWQKQLJNQFHEKF6RFx7znNIUcAWOV1mD6k"
+                     alt="Oficina moderna" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 hero-overlay"></div>
+                <!-- Grain texture overlay -->
+                <div class="absolute inset-0 opacity-[0.03]" style="background-image:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\"); background-repeat: repeat; background-size: 128px;"></div>
+            </div>
+
+            <div class="relative z-10 w-full max-w-[1280px] mx-auto px-5 md:px-10">
+                <div class="max-w-[640px]">
+                    <span class="title-rule text-gold/80 mb-5 block">Colección 2026</span>
+                    <h1 class="font-serif text-[2.6rem] md:text-[3.5rem] lg:text-[4rem] text-white leading-[1.15] font-semibold mb-6 drop-shadow-md">
+                        Confort de Élite<br>
+                        <em class="not-italic text-gold-light">para tu Espacio</em>
+                    </h1>
+                    <p class="text-white/85 text-base md:text-lg mb-10 max-w-[480px] leading-relaxed font-light">
+                        Sillería ergonómica de última generación. Diseño técnico que transforma tu entorno de trabajo con garantía certificada.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})"
+                            class="flex items-center gap-2 bg-gold text-ink px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold-light transition-all shadow-lg hover:shadow-xl active:scale-95">
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+                            Ver Productos
+                        </button>
+                        <button onclick="triggerSectionComingSoon('Agendar Consulta')"
+                            class="flex items-center gap-2 bg-white/15 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/25 transition-all backdrop-blur-sm active:scale-95">
+                            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                            Agendar Consulta
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-60">
+                <span class="text-white text-[10px] font-mono tracking-widest uppercase">Scroll</span>
+                <span class="material-symbols-outlined text-white text-lg animate-bounce">expand_more</span>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════ TRUST BADGES STRIP ═════ -->
+        <div class="trust-strip py-4 px-5 md:px-10">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-y-3 gap-x-6 md:gap-0 md:flex md:items-center md:justify-around">
+                    <div class="flex items-center gap-3 text-white/90">
+                        <span class="material-symbols-outlined text-gold text-[22px]" style="font-variation-settings:'FILL' 1;">local_shipping</span>
+                        <div>
+                            <p class="text-xs font-semibold leading-none mb-0.5">Envío Gratis</p>
+                            <p class="text-[11px] text-white/50 leading-none">En compras +$200</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90">
+                        <span class="material-symbols-outlined text-gold text-[22px]" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+                        <div>
+                            <p class="text-xs font-semibold leading-none mb-0.5">Garantía 2 años</p>
+                            <p class="text-[11px] text-white/50 leading-none">Certificada</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90">
+                        <span class="material-symbols-outlined text-gold text-[22px]" style="font-variation-settings:'FILL' 1;">autorenew</span>
+                        <div>
+                            <p class="text-xs font-semibold leading-none mb-0.5">Cambios 30 días</p>
+                            <p class="text-[11px] text-white/50 leading-none">Sin preguntas</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90">
+                        <span class="material-symbols-outlined text-gold text-[22px]" style="font-variation-settings:'FILL' 1;">support_agent</span>
+                        <div>
+                            <p class="text-xs font-semibold leading-none mb-0.5">Soporte 24/7</p>
+                            <p class="text-[11px] text-white/50 leading-none">Vía WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════════════ CATEGORÍAS ═════ -->
+        <section id="categorias" class="reveal py-20 max-w-[1280px] mx-auto px-5 md:px-10">
+            <div class="text-center mb-14">
+                <span class="section-badge mb-4 inline-flex"><span class="dot"></span>Próximamente</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-ink dark:text-d-text font-semibold mb-3">Nuestras Categorías</h2>
+                <p class="text-ink-muted dark:text-d-muted max-w-md mx-auto text-sm">Explora nuestra selección de mobiliario premium en preparación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div onclick="triggerSectionComingSoon('Categoría: Sillas')" class="cat-card group relative cursor-pointer bg-white dark:bg-d-surface rounded-2xl p-10 flex flex-col items-center text-center border border-cream-dark dark:border-d-border overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                    <div class="relative mb-6 w-20 h-20 rounded-full bg-cream dark:bg-d-elevated flex items-center justify-center group-hover:bg-gold-pale dark:group-hover:bg-gold/20 transition-colors duration-300">
+                        <span class="material-symbols-outlined text-4xl text-gold" style="font-variation-settings:'FILL' 0;">chair_alt</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-2 text-ink dark:text-d-text">Sillas</h3>
+                    <p class="text-xs text-ink-muted dark:text-d-muted leading-relaxed">Ergonomía superior para cada tipo de cuerpo y jornada laboral.</p>
+                    <span class="mt-5 flex items-center gap-1 text-xs font-semibold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Ver catálogo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                </div>
+
+                <div onclick="triggerSectionComingSoon('Categoría: Escritorios')" class="cat-card group relative cursor-pointer bg-white dark:bg-d-surface rounded-2xl p-10 flex flex-col items-center text-center border border-cream-dark dark:border-d-border overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                    <div class="relative mb-6 w-20 h-20 rounded-full bg-cream dark:bg-d-elevated flex items-center justify-center group-hover:bg-gold-pale dark:group-hover:bg-gold/20 transition-colors duration-300">
+                        <span class="material-symbols-outlined text-4xl text-gold" style="font-variation-settings:'FILL' 0;">desk</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-2 text-ink dark:text-d-text">Escritorios</h3>
+                    <p class="text-xs text-ink-muted dark:text-d-muted leading-relaxed">Superficies diseñadas para potenciar tu productividad al máximo.</p>
+                    <span class="mt-5 flex items-center gap-1 text-xs font-semibold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Ver catálogo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                </div>
+
+                <div onclick="triggerSectionComingSoon('Categoría: Sillones')" class="cat-card group relative cursor-pointer bg-white dark:bg-d-surface rounded-2xl p-10 flex flex-col items-center text-center border border-cream-dark dark:border-d-border overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                    <div class="relative mb-6 w-20 h-20 rounded-full bg-cream dark:bg-d-elevated flex items-center justify-center group-hover:bg-gold-pale dark:group-hover:bg-gold/20 transition-colors duration-300">
+                        <span class="material-symbols-outlined text-4xl text-gold" style="font-variation-settings:'FILL' 0;">weekend</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-2 text-ink dark:text-d-text">Sillones</h3>
+                    <p class="text-xs text-ink-muted dark:text-d-muted leading-relaxed">Confort de lujo absoluto para zonas de espera y hogar.</p>
+                    <span class="mt-5 flex items-center gap-1 text-xs font-semibold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Ver catálogo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════ PRODUCTOS ═════ -->
+        <section id="productos" class="reveal py-20 bg-cream-dark dark:bg-d-elevated/40">
+            <div class="max-w-[1280px] mx-auto px-5 md:px-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+                    <div>
+                        <span class="section-badge mb-4 inline-flex"><span class="dot"></span>Disponibles</span>
+                        <h2 class="font-serif text-3xl md:text-4xl text-ink dark:text-d-text font-semibold">Productos Destacados</h2>
+                    </div>
+                    <p class="text-ink-muted dark:text-d-muted text-sm max-w-xs md:text-right">Añade productos reales a tu carrito — checkout directo por WhatsApp.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white dark:bg-d-surface rounded-2xl overflow-hidden border border-cream-dark dark:border-d-border flex flex-col">
+                        <div class="card-img h-60 overflow-hidden relative bg-gray-50 dark:bg-d-elevated cursor-pointer" onclick="openProductPreview(1)">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlpwuhfbyQPPUsoYFa36KF1lMwRIAeogAAoON6nhK_EoncjPpD124aJUCwo-wzCzgBQ08oU8S2Jv6O46xSi6JYHqghxX5V1x2dqIiyjUHdlsGqu9IZ0u1ShmCQb_V0F3bzoFlP2ofjLQMcSFTjFwf4he4T2q6zZd2RhUxdK1m9n7xfe0o5LZrTc1ErCPOzWcrBcdCaRiAikLtKbOnJtS0OaQRocTciLhFSwq4YuiQSZgeizj9npT_Ha5WWAkDQ3eOZuiADBcTeCwU"
+                                 alt="Silla Elite" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-gold text-ink text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Estelar</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="font-semibold text-sm text-ink dark:text-d-text mb-1 cursor-pointer hover:text-gold transition-colors" onclick="openProductPreview(1)">Silla Ergonómica Elite</h3>
+                                <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Soporte lumbar ajustable · malla premium transpirable</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$120<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <button onclick="addToCart(1)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
+                                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                                    Añadir al Carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white dark:bg-d-surface rounded-2xl overflow-hidden border border-cream-dark dark:border-d-border flex flex-col">
+                        <div class="card-img h-60 overflow-hidden relative bg-gray-50 dark:bg-d-elevated cursor-pointer" onclick="openProductPreview(2)">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOIqtzSvClJHGCBopijC-Yh9O8q5LcWgB3S1B_2ryxQL2Zv8LsquGB0n0C7AIzNUrL2SXUrxQEGcaeAk_X3UvEo0Om0JwOQXD64GRbVj0XcX3nmfbukxpgDjjYF8ny3AVBLd3QJBoov7jW-NCr76IOLu5jRyXWYIGvzrIzAChm4xMkneUBtJbx7x6bA-WEG1GKPOn1bw55LIwprwuohsJPRTS3Ewarz1B8TLptLdSLv5JlVPi_3SYBjfY_qMQe_P2_7GUOhv9-Ogg"
+                                 alt="Escritorio Viena" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="font-semibold text-sm text-ink dark:text-d-text mb-1 cursor-pointer hover:text-gold transition-colors" onclick="openProductPreview(2)">Escritorio Moderno Viena</h3>
+                                <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Madera de roble natural escandinavo · diseño minimalista</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$180<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <button onclick="addToCart(2)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
+                                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                                    Añadir al Carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white dark:bg-d-surface rounded-2xl overflow-hidden border border-cream-dark dark:border-d-border flex flex-col">
+                        <div class="card-img h-60 overflow-hidden relative bg-gray-50 dark:bg-d-elevated cursor-pointer" onclick="openProductPreview(3)">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByYQaAYf306j9H5cAOnq0ru-AwqkQuUM_xbcIbg9du6c4T78Ue_XKEUJFEDvyz0GB665bwrb6_mjKjtbZmevrWEVzClU9PX2Ea4lhntPSwWMXwPdU8xJE8QKicy-PiIgRwMrXV9qaAjTSfRFhUghDeWssv5jREsg70g1KWqjheYpO5KKBSkMaVo25Nlubpsq1s7f0HnRMFHcX8RFlfYbEFLm0yuONGTotdV0_NbUX8afnHdJ3cFkNZOVfxZEysExgJZV9zsNtEJpo"
+                                 alt="Sillón Oslo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="font-semibold text-sm text-ink dark:text-d-text mb-1 cursor-pointer hover:text-gold transition-colors" onclick="openProductPreview(3)">Sillón Ejecutivo Oslo</h3>
+                                <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Cuero genuino acolchado · base giratoria metálica robusta</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$250<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <button onclick="addToCart(3)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
+                                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                                    Añadir al Carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white dark:bg-d-surface rounded-2xl overflow-hidden border border-cream-dark dark:border-d-border flex flex-col">
+                        <div class="card-img h-60 overflow-hidden relative bg-gray-50 dark:bg-d-elevated cursor-pointer" onclick="openProductPreview(4)">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuApP72pPQ6kgREV3D0Adjqxiim9yd5w6XpJ0IPT_PHlO-Txm-oW5g1_O5FytuB0_XXou2CnzVHYmE_AInOxTgYbIgR-l7AcPsr2pYt0Gb__PO9SHbUcgLKvYTxBq5n3aLh6ytZYHpJZTw2QTn_b0InrL990lSgBvbbyY2koqn2cj3rUsPzwEFqzXBm9UtJo7EpNVaD5mdk6UgH5DYua8clN_XXWumOTy-IE7yTB3xMpyn-F7V1N3stZfAf05Yl3S8HloM8BRRdh9UQ"
+                                 alt="Silla Gamer" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-rust text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Nuevo</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="font-semibold text-sm text-ink dark:text-d-text mb-1 cursor-pointer hover:text-gold transition-colors" onclick="openProductPreview(4)">Silla Gamer Pro</h3>
+                                <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Ergonomía de alta resistencia · cojines lumbares · 180°</p>
+                            </div>
+                            <div>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$150<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <button onclick="addToCart(4)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
+                                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                                    Añadir al Carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════ REPARACIÓN ═════ -->
+        <section id="servicios" class="reveal py-20 max-w-[1280px] mx-auto px-5 md:px-10">
+            <div class="bg-ink dark:bg-d-surface rounded-3xl overflow-hidden flex flex-col md:flex-row items-stretch border border-ink/10 dark:border-d-border">
+                <div class="md:w-5/12 min-h-[300px] relative overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh7l-CVqIvoDkpY_EAV2jEYsemEDM0pL8J-7Y5ve-l0VqcpIESEnt9w2n8Ak1UYV4rS_Osnh-NJIyqFYagqaX5sxK1yYiBJtz_rVJZNVzt1ycAkXHNKiBr_aRfQtn6uGagPOf0cNro78EeB3vyxHM0K-S6HqEB-cKay79Rc7XQX89y_FB4P25CZLG4VIybaSZ7o7tIO8Bu3qv2sjvlYXQUS5rM9fe4-DEPyUiLEZWwtzoQJusQlOFMtD-NMsn7LIBb5Zpur11gYGU"
+                         alt="Reparación Profesional" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent to-ink/30 dark:to-d-surface/30"></div>
+                </div>
+                <div class="md:w-7/12 p-10 md:p-14 flex flex-col justify-center bg-ink dark:bg-d-surface relative">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                    <span class="section-badge mb-5 inline-flex border-gold/30 bg-gold/10 text-gold-light dark:border-gold/30 dark:bg-gold/10 dark:text-gold-light"><span class="dot bg-gold-light"></span>Servicio Especial</span>
+                    <h2 class="font-serif text-2xl md:text-3xl text-white font-semibold mb-4 leading-tight">Reparación y Restauración<br>Profesional</h2>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8 max-w-md">¿Tu silla favorita ha perdido su firmeza original? Nuestros técnicos expertos devuelven la vida a tus muebles con materiales de alta gama y garantía certificada.</p>
+                    <button onclick="triggerSectionComingSoon('Cotizar Servicio de Reparación')"
+                        class="w-fit flex items-center gap-2 bg-gold text-ink px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold-light transition-all shadow-lg active:scale-95">
+                        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">build</span>
+                        Cotizar Servicio
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════════ RESEÑAS ═════ -->
+        <section id="reseñas" class="reveal py-20 bg-cream-dark dark:bg-d-elevated/30">
+            <div class="max-w-[1280px] mx-auto px-5 md:px-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-5">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <span class="text-xs font-semibold text-ink-muted dark:text-d-muted uppercase tracking-wider">Reseñas verificadas de Google</span>
+                        </div>
+                        <h2 class="font-serif text-3xl md:text-4xl text-ink dark:text-d-text font-semibold">Lo que dicen<br>nuestros clientes</h2>
+                    </div>
+                    <div class="flex items-center gap-2 bg-gold-pale dark:bg-d-surface border border-gold/20 rounded-2xl px-5 py-3">
+                        <span class="font-serif text-3xl font-bold text-ink dark:text-d-text">4.9</span>
+                        <div class="flex text-gold">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">star_half</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="bg-white dark:bg-d-surface p-7 rounded-2xl border border-cream-dark dark:border-d-border flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClPb7kF1Xi_O1gvnC7MVDpNJ41DXbdGKR2bjTQaTKzzmn2dSobCIgJJoTHC5mcDNqgD90PAclJiTPEj82awi8CPGDyzpW_4QSKHLnwCSBtaL5gIdmy3tCYpDHL-ZJ6T9mhTcP8D7Y5GDuzeUCQ3bdBYt7bmbaTRVrT3b-bUycVU9o2YCIpytYyCAfXZ0EssRTOaj36ZMJK-osARwhdOlyLG61xWQZYzXgrYkhxjMBPDrHz6aSIy8ckoVxG_qg1dkMkdKVaq5x0zl0"
+                                     alt="Carlos Ruiz" class="w-11 h-11 rounded-full object-cover">
+                                <div>
+                                    <p class="text-sm font-semibold text-ink dark:text-d-text">Carlos Ruiz</p>
+                                    <div class="flex text-gold mt-0.5">
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-ink-muted dark:text-d-muted italic leading-relaxed">"La silla ergonómica que compré ha cambiado mi vida. Ya no tengo dolores de espalda al terminar el día. El servicio de entrega fue impecable."</p>
+                        </div>
+                        <div class="mt-5 flex items-center gap-1.5 text-pine dark:text-pine-light">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">verified</span>
+                            <span class="text-xs font-medium">Compra Verificada</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-d-surface p-7 rounded-2xl border border-cream-dark dark:border-d-border flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvIb-wrJOXkJD_2hjZ5GDoRIeQFLpqOwePJLQPIfmn-YkGCisPv3w-WMnB_vi_gqLbfj5Ibros3vhOOzPVel7KckHvAaGDFt-F9hTD0u0ilbQtR8yGS6XNpuzv09GrC974NDSxN5MRnamxPRjU3BYvwfxiwDkpid-5-0nyEKthceYby1MNWVTZ1z-k6flz41d8EnFOKzFr0eN3kyiTveb92cLAg04-lqoztGRG_89Emg8wuIPj_fqAchadb3sKPATKYxgxBAQEmsU"
+                                     alt="Elena Gómez" class="w-11 h-11 rounded-full object-cover">
+                                <div>
+                                    <p class="text-sm font-semibold text-ink dark:text-d-text">Elena Gómez</p>
+                                    <div class="flex text-gold mt-0.5">
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-ink-muted dark:text-d-muted italic leading-relaxed">"Llevé mi silla de cuero antigua para restaurar y el resultado fue increíble. Parece recién salida de fábrica. Un trabajo artesanal de diez."</p>
+                        </div>
+                        <div class="mt-5 flex items-center gap-1.5 text-pine dark:text-pine-light">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">verified</span>
+                            <span class="text-xs font-medium">Servicio Verificado</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-d-surface p-7 rounded-2xl border border-cream-dark dark:border-d-border flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc_EsNPRYBqhVXshFOYxGRfvXw5TwSjz5L-WDwr6k7Zgrwitac94SPdA3VZ8-Ml-SfSmmVxXPOnRkO6wBGmEQ35P-uSxAvwnasHgSggYAqAVoS-izWh3fKOL5KThzy9Qbr99cI-uSdSood58BNXf7sQDukkycmeDhqRiwi_3J_SlOBpvIuQXdfUInMJS6ULZkSz4ldD3Rk9xE4hkoVty4zv26U4-T2CY9Poq-11P96KVhorhaDvuSdLxGdMNo1rEAhh5k1F6n1W2U"
+                                     alt="Marcos Toledo" class="w-11 h-11 rounded-full object-cover">
+                                <div>
+                                    <p class="text-sm font-semibold text-ink dark:text-d-text">Marcos Toledo</p>
+                                    <div class="flex text-gold mt-0.5">
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-ink-muted dark:text-d-muted italic leading-relaxed">"Excelente calidad de los escritorios. La atención al cliente en SillasPro Elite es muy profesional, te asesoran según tu espacio y necesidades."</p>
+                        </div>
+                        <div class="mt-5 flex items-center gap-1.5 text-pine dark:text-pine-light">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">verified</span>
+                            <span class="text-xs font-medium">Compra Verificada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════════════ FOOTER ═════ -->
+    <footer class="bg-ink dark:bg-d-surface border-t border-white/10 py-14 px-5 md:px-10">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-symbols-outlined text-gold text-2xl" style="font-variation-settings:'FILL' 1;">chair_alt</span>
+                        <span class="font-serif text-lg font-semibold text-white">SillasPro <span class="text-gold">Elite</span></span>
+                    </div>
+                    <p class="text-white/50 text-xs leading-relaxed mb-5 max-w-xs">Sillería ergonómica de élite con diseño técnico de última generación para la máxima productividad y confort en tu espacio.</p>
+                    <!-- WhatsApp contact visible -->
+                    <a href="https://wa.me/5491122334455?text=Hola%20SillasPro%20Elite!%20Me%20interesa%20obtener%20más%20información." target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 bg-wa-green/15 border border-wa-green/30 text-wa-green px-4 py-2.5 rounded-xl text-xs font-semibold hover:bg-wa-green hover:text-ink transition-all">
+                        <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.4-11.2 2.5-2.4 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.7 9.1 31.7 11.7 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                        +54 9 11 2233-4455
+                    </a>
+                </div>
+                <!-- Links -->
+                <div>
+                    <p class="text-white/30 text-[10px] uppercase tracking-widest font-mono mb-5">Información</p>
+                    <div class="flex flex-col gap-3">
+                        <button onclick="triggerSectionComingSoon('Política de Privacidad')" class="text-left text-white/60 text-sm hover:text-gold transition-colors w-fit">Privacidad</button>
+                        <button onclick="triggerSectionComingSoon('Términos de Servicio')" class="text-left text-white/60 text-sm hover:text-gold transition-colors w-fit">Términos de Servicio</button>
+                        <button onclick="triggerSectionComingSoon('Políticas de Envíos')" class="text-left text-white/60 text-sm hover:text-gold transition-colors w-fit">Envíos y Despacho</button>
+                        <button onclick="triggerSectionComingSoon('Garantías')" class="text-left text-white/60 text-sm hover:text-gold transition-colors w-fit">Garantía</button>
+                        <button onclick="triggerSectionComingSoon('Contacto')" class="text-left text-white/60 text-sm hover:text-gold transition-colors w-fit">Contacto</button>
+                    </div>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <p class="text-white/30 text-[10px] uppercase tracking-widest font-mono mb-5">Novedades</p>
+                    <p class="text-white/50 text-xs mb-4 leading-relaxed">Suscríbete y entérate primero de lanzamientos y promociones exclusivas.</p>
+                    <form onsubmit="handleSubscribe(event)" class="flex gap-2">
+                        <input type="email" id="footer-email" required placeholder="tu@email.com"
+                               class="flex-grow bg-white/10 border border-white/15 text-white placeholder-white/30 text-xs px-3.5 py-2.5 rounded-xl focus:outline-none focus:border-gold transition-colors">
+                        <button type="submit" class="bg-gold text-ink px-4 py-2.5 rounded-xl text-xs font-semibold hover:bg-gold-light transition-all whitespace-nowrap">
+                            Suscribir
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-white/30 text-xs">© 2026 SillasPro Elite. Todos los derechos reservados.</p>
+                <p class="text-white/20 text-xs font-mono">Calidad y confort ergonómico garantizados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ══════════════════════════════════════════════ CART DRAWER ═════ -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-ink/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="cart-drawer-panel" class="absolute inset-y-0 right-0 w-full sm:w-[420px] bg-white dark:bg-d-surface shadow-2xl flex flex-col translate-x-full pointer-events-auto">
+            <!-- Header -->
+            <div class="px-6 py-5 border-b border-cream-dark dark:border-d-border flex justify-between items-center">
+                <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-gold text-[20px]" style="font-variation-settings:'FILL' 1;">shopping_bag</span>
+                    <h2 class="font-serif text-lg font-semibold text-ink dark:text-d-text">Tu Carrito</h2>
+                </div>
+                <button onclick="toggleCartDrawer(false)" class="p-1.5 rounded-full text-ink-muted dark:text-d-muted hover:bg-cream dark:hover:bg-d-elevated transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+            </div>
+
+            <!-- Items -->
+            <div id="cart-items-container" class="flex-grow overflow-y-auto px-6 py-4">
+                <div class="h-full flex flex-col items-center justify-center text-center space-y-4 py-12">
+                    <span class="material-symbols-outlined text-5xl text-ink-faint opacity-30">shopping_bag</span>
+                    <p class="text-sm text-ink-muted dark:text-d-muted font-medium">Tu carrito está vacío.</p>
+                    <button onclick="toggleCartDrawer(false)" class="bg-ink dark:bg-gold text-white dark:text-ink px-5 py-2.5 rounded-full text-xs font-semibold hover:bg-gold hover:text-ink transition-all">
+                        Explorar Productos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="cart-footer" class="px-6 py-5 border-t border-cream-dark dark:border-d-border bg-cream dark:bg-d-elevated">
+                <div class="space-y-1.5 mb-5">
+                    <div class="flex justify-between text-xs text-ink-muted dark:text-d-muted">
+                        <span>Subtotal</span><span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-xs text-ink-muted dark:text-d-muted">
+                        <span>IVA (19%)</span><span id="cart-tax">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-semibold text-ink dark:text-d-text pt-2 border-t border-cream-dark dark:border-d-border mt-2">
+                        <span>Total estimado</span><span id="cart-total">$0.00</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="clearCart()" class="border border-rust/40 text-rust hover:bg-rust hover:text-white py-3 rounded-xl text-xs font-semibold transition-all">
+                        Vaciar
+                    </button>
+                    <button onclick="checkoutCart()" class="flex items-center justify-center gap-1.5 bg-wa-green text-white hover:bg-wa-green/90 py-3 rounded-xl text-xs font-semibold transition-all shadow-md active:scale-95 overflow-hidden">
+                        <svg class="w-4 h-4 fill-white flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.4-11.2 2.5-2.4 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.7 9.1 31.7 11.7 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                        <span class="hidden sm:inline">Pedir por </span>WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════ SEARCH MODAL ═════ -->
+    <div id="search-modal" class="modal-overlay fixed inset-0 z-50 bg-ink/50 backdrop-blur-md flex items-start justify-center pt-[12vh] px-4">
+        <div id="search-modal-panel" class="modal-panel w-full max-w-xl bg-white dark:bg-d-surface rounded-2xl shadow-2xl border border-cream-dark dark:border-d-border overflow-hidden -translate-y-4">
+            <div class="flex items-center gap-3 px-5 py-4 border-b border-cream-dark dark:border-d-border">
+                <span class="material-symbols-outlined text-ink-faint text-[22px]">search</span>
+                <input type="text" id="search-input" oninput="performSearch()" placeholder="Buscar productos… silla, escritorio, oslo…"
+                       class="flex-grow bg-transparent text-ink dark:text-d-text placeholder-ink-faint text-sm outline-none border-0 focus:ring-0">
+                <button onclick="closeSearchModal()" class="p-1.5 rounded-full text-ink-faint hover:text-ink dark:hover:text-d-text hover:bg-cream dark:hover:bg-d-elevated transition-all">
+                    <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+            </div>
+            <div id="search-results" class="max-h-80 overflow-y-auto p-4">
+                <div class="text-center py-8 text-ink-faint text-xs">Escribe para buscar en tiempo real</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════ COMING SOON MODAL ═════ -->
+    <div id="coming-soon-modal" class="modal-overlay fixed inset-0 z-50 bg-ink/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-panel w-full max-w-sm bg-white dark:bg-d-surface rounded-3xl p-8 shadow-2xl border border-cream-dark dark:border-d-border relative">
+            <button onclick="closeComingSoonModal()" class="absolute top-4 right-4 p-1.5 text-ink-faint hover:text-ink dark:hover:text-d-text rounded-full hover:bg-cream dark:hover:bg-d-elevated transition-colors">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+            <div class="text-center space-y-3">
+                <div class="inline-flex p-4 rounded-full bg-gold/10 mb-1">
+                    <span class="material-symbols-outlined text-4xl text-gold animate-bounce">engineering</span>
+                </div>
+                <h3 class="font-serif text-xl font-semibold text-ink dark:text-d-text">En Desarrollo</h3>
+                <p id="coming-soon-section-name" class="text-[10px] font-mono font-semibold text-gold uppercase tracking-[0.2em]"></p>
+                <p class="text-sm text-ink-muted dark:text-d-muted leading-relaxed">Estamos puliendo los últimos detalles. Déjanos tu correo y serás el primero en enterarte.</p>
+                <form onsubmit="handleSubscribe(event)" class="space-y-2.5 pt-3">
+                    <input type="email" id="subscribe-email" required placeholder="tuemail@ejemplo.com"
+                           class="w-full px-4 py-3 rounded-xl border border-cream-dark dark:border-d-border bg-cream dark:bg-d-elevated text-ink dark:text-d-text placeholder-ink-faint text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors">
+                    <button type="submit" class="w-full bg-ink dark:bg-gold text-white dark:text-ink font-semibold py-3 rounded-xl text-sm hover:bg-gold hover:text-ink transition-all active:scale-[0.98]">
+                        Notificarme al Lanzamiento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════ PRODUCT PREVIEW MODAL ═════ -->
+    <div id="product-preview-modal" class="modal-overlay fixed inset-0 z-50 bg-ink/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div id="product-preview-content" class="modal-panel w-full max-w-2xl bg-white dark:bg-d-surface rounded-3xl shadow-2xl border border-cream-dark dark:border-d-border overflow-hidden relative max-h-[90vh] overflow-y-auto">
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════ TOAST STACK ═════ -->
+    <div id="toast-stack" class="fixed bottom-6 left-6 z-[110] flex flex-col gap-2 pointer-events-none max-w-xs">
+    </div>
+
+
+    <!-- ═══════════════════════════════ WHATSAPP FAB ═════ -->
+    <a id="wa-fab"
+       href="https://wa.me/5491122334455?text=Hola%20SillasPro%20Elite!%20Me%20interesa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20sillas%20ergon%C3%B3micas."
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-7 right-7 z-[100] w-14 h-14 bg-wa-green rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 active:scale-95 transition-transform duration-200 group"
+       aria-label="Contactar por WhatsApp">
+        <!-- Tooltip -->
+        <span class="absolute right-16 top-1/2 -translate-y-1/2 px-3.5 py-2 bg-ink text-white text-xs font-medium rounded-xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden md:block">
+            Hablemos por WhatsApp
+        </span>
+        <svg class="w-7 h-7 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.4-11.2 2.5-2.4 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.7 9.1 31.7 11.7 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+
+    <!-- ═══════════════════════════════════════════════ SCRIPTS ═════ -->
+    <script>
+        // ── 1. CONFIG & STATE ───────────────────────────────────────────
+        const WA_NUMBER = '5491122334455';
+        const PRODUCTS = [
+            {
+                id: 1, name: 'Silla Ergonómica Elite', price: 120.00,
+                description: 'La máxima comodidad para tus largas jornadas de trabajo. Soporte lumbar 3D, reposacabezas ajustable y malla elástica súper fresca y de alta durabilidad.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBlpwuhfbyQPPUsoYFa36KF1lMwRIAeogAAoON6nhK_EoncjPpD124aJUCwo-wzCzgBQ08oU8S2Jv6O46xSi6JYHqghxX5V1x2dqIiyjUHdlsGqu9IZ0u1ShmCQb_V0F3bzoFlP2ofjLQMcSFTjFwf4he4T2q6zZd2RhUxdK1m9n7xfe0o5LZrTc1ErCPOzWcrBcdCaRiAikLtKbOnJtS0OaQRocTciLhFSwq4YuiQSZgeizj9npT_Ha5WWAkDQ3eOZuiADBcTeCwU',
+                badge: 'Estelar'
+            },
+            {
+                id: 2, name: 'Escritorio Moderno Viena', price: 180.00,
+                description: 'Un escritorio de diseño minimalista escandinavo. Fabricado con madera de roble natural y patas de acero lacadas. Cuenta con dos cajones amplios para almacenamiento eficiente.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOIqtzSvClJHGCBopijC-Yh9O8q5LcWgB3S1B_2ryxQL2Zv8LsquGB0n0C7AIzNUrL2SXUrxQEGcaeAk_X3UvEo0Om0JwOQXD64GRbVj0XcX3nmfbukxpgDjjYF8ny3AVBLd3QJBoov7jW-NCr76IOLu5jRyXWYIGvzrIzAChm4xMkneUBtJbx7x6bA-WEG1GKPOn1bw55LIwprwuohsJPRTS3Ewarz1B8TLptLdSLv5JlVPi_3SYBjfY_qMQe_P2_7GUOhv9-Ogg',
+                badge: ''
+            },
+            {
+                id: 3, name: 'Sillón Ejecutivo Oslo', price: 250.00,
+                description: 'Elegancia clásica combinada con ergonomía moderna. Tapizado en cuero italiano de primer nivel con costuras reforzadas a mano y un acolchado ergonómico de alta densidad.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByYQaAYf306j9H5cAOnq0ru-AwqkQuUM_xbcIbg9du6c4T78Ue_XKEUJFEDvyz0GB665bwrb6_mjKjtbZmevrWEVzClU9PX2Ea4lhntPSwWMXwPdU8xJE8QKicy-PiIgRwMrXV9qaAjTSfRFhUghDeWssv5jREsg70g1KWqjheYpO5KKBSkMaVo25Nlubpsq1s7f0HnRMFHcX8RFlfYbEFLm0yuONGTotdV0_NbUX8afnHdJ3cFkNZOVfxZEysExgJZV9zsNtEJpo',
+                badge: ''
+            },
+            {
+                id: 4, name: 'Silla Gamer Pro', price: 150.00,
+                description: 'Diseño agresivo inspirado en autos de carreras de alto rendimiento. Estructura de acero reforzada, cojines de soporte lumbar y cervical regulables, y reclinación completa de 180°.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuApP72pPQ6kgREV3D0Adjqxiim9yd5w6XpJ0IPT_PHlO-Txm-oW5g1_O5FytuB0_XXou2CnzVHYmE_AInOxTgYbIgR-l7AcPsr2pYt0Gb__PO9SHbUcgLKvYTxBq5n3aLh6ytZYHpJZTw2QTn_b0InrL990lSgBvbbyY2koqn2cj3rUsPzwEFqzXBm9UtJo7EpNVaD5mdk6UgH5DYua8clN_XXWumOTy-IE7yTB3xMpyn-F7V1N3stZfAf05Yl3S8HloM8BRRdh9UQ',
+                badge: 'Nuevo'
+            }
+        ];
+
+        let cart = [];
+        try {
+            const saved = localStorage.getItem('sillaspro_cart');
+            if (saved) cart = JSON.parse(saved);
+        } catch (e) { cart = []; }
+
+
+        // ── 2. THEME ────────────────────────────────────────────────────
+        (function initTheme() {
+            // Solo activa dark mode si el usuario lo eligió explícitamente
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+
+        function toggleDarkMode() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            showToast(isDark ? 'Modo oscuro activado' : 'Modo claro activado', 'info');
+        }
+
+
+        // ── 3. TOAST ────────────────────────────────────────────────────
+        function showToast(message, type = 'success') {
+            const stack = document.getElementById('toast-stack');
+            const toast = document.createElement('div');
+
+            const styles = {
+                success: 'bg-ink dark:bg-d-elevated border-gold/30 text-white',
+                error:   'bg-rust/95 border-rust-light/30 text-white',
+                info:    'bg-ink/90 dark:bg-d-elevated border-white/10 text-white',
+            };
+            const icons = { success: 'check_circle', error: 'error', info: 'info' };
+
+            toast.className = `pointer-events-auto flex items-center gap-2.5 pl-3.5 pr-4 py-2.5 rounded-xl shadow-lg text-xs font-medium border backdrop-blur-md transform translate-y-4 opacity-0 transition-all duration-300 ${styles[type] || styles.info}`;
+            toast.innerHTML = `<span class="material-symbols-outlined text-[16px] text-gold">${icons[type] || 'info'}</span><span>${message}</span>`;
+
+            stack.appendChild(toast);
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            });
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+
+        // ── 4. MOBILE MENU ───────────────────────────────────────────────
+        function toggleMobileMenu(open) {
+            const overlay = document.getElementById('mobile-menu');
+            const panel   = document.getElementById('mobile-menu-panel');
+            if (open) {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('-translate-x-full');
+            } else {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('-translate-x-full');
+            }
+        }
+
+
+        // ── 5. CART ──────────────────────────────────────────────────────
+        function toggleCartDrawer(open) {
+            const overlay = document.getElementById('cart-drawer');
+            const panel   = document.getElementById('cart-drawer-panel');
+            if (open) {
+                renderCart();
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        function saveCart() {
+            localStorage.setItem('sillaspro_cart', JSON.stringify(cart));
+            updateCartBadge();
+        }
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            const total = cart.reduce((s, i) => s + i.quantity, 0);
+            badge.textContent = total;
+            badge.classList.toggle('scale-0', total === 0);
+            badge.classList.toggle('scale-100', total > 0);
+        }
+
+        function addToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+            const existing = cart.find(i => i.id === productId);
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, quantity: 1 });
+            }
+            saveCart();
+            showToast(`Añadido: ${product.name}`);
+        }
+
+        function updateQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+            item.quantity += delta;
+            if (item.quantity <= 0) cart = cart.filter(i => i.id !== productId);
+            saveCart();
+            renderCart();
+        }
+
+        function removeFromCart(productId) {
+            const item = cart.find(i => i.id === productId);
+            cart = cart.filter(i => i.id !== productId);
+            saveCart();
+            renderCart();
+            if (item) showToast(`Eliminado: ${item.name}`, 'error');
+        }
+
+        function clearCart() {
+            if (!cart.length) return;
+            cart = [];
+            saveCart();
+            renderCart();
+            showToast('Carrito vaciado', 'info');
+        }
+
+        function renderCart() {
+            const container     = document.getElementById('cart-items-container');
+            const subtotalSpan  = document.getElementById('cart-subtotal');
+            const taxSpan       = document.getElementById('cart-tax');
+            const totalSpan     = document.getElementById('cart-total');
+
+            if (!cart.length) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center space-y-4 py-12">
+                        <span class="material-symbols-outlined text-5xl text-ink-faint opacity-30">shopping_bag</span>
+                        <p class="text-sm text-ink-muted dark:text-d-muted font-medium">Tu carrito está vacío.</p>
+                        <button onclick="toggleCartDrawer(false)" class="bg-ink dark:bg-gold text-white dark:text-ink px-5 py-2.5 rounded-full text-xs font-semibold hover:bg-gold hover:text-ink transition-all">Explorar Productos</button>
+                    </div>`;
+                subtotalSpan.textContent = taxSpan.textContent = totalSpan.textContent = '$0.00';
+                return;
+            }
+
+            let subtotal = 0;
+            let html = '<div class="divide-y divide-cream-dark dark:divide-d-border">';
+            cart.forEach(item => {
+                const lineTotal = item.price * item.quantity;
+                subtotal += lineTotal;
+                html += `
+                    <div class="flex items-center gap-3 py-4">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-cover rounded-xl bg-cream flex-shrink-0 border border-cream-dark dark:border-d-border">
+                        <div class="flex-grow min-w-0">
+                            <h4 class="text-xs font-semibold text-ink dark:text-d-text truncate">${item.name}</h4>
+                            <p class="text-[11px] text-gold font-semibold mt-0.5">$${item.price.toFixed(2)}</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="updateQuantity(${item.id}, -1)" class="qty-btn material-symbols-outlined" style="font-variation-settings:'FILL' 0; font-size:14px;">remove</button>
+                                <span class="text-xs font-semibold text-ink dark:text-d-text w-5 text-center">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)"  class="qty-btn material-symbols-outlined" style="font-variation-settings:'FILL' 0; font-size:14px;">add</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end gap-2 flex-shrink-0">
+                            <span class="text-xs font-bold text-ink dark:text-d-text">$${lineTotal.toFixed(2)}</span>
+                            <button onclick="removeFromCart(${item.id})" class="text-rust hover:opacity-70 transition-opacity p-1">
+                                <span class="material-symbols-outlined text-[16px]">delete</span>
+                            </button>
+                        </div>
+                    </div>`;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+
+            const tax   = subtotal * 0.19;
+            const total = subtotal + tax;
+            subtotalSpan.textContent = `$${subtotal.toFixed(2)}`;
+            taxSpan.textContent      = `$${tax.toFixed(2)}`;
+            totalSpan.textContent    = `$${total.toFixed(2)}`;
+        }
+
+        // ── BUG FIX #3: checkout opens WhatsApp directly ────────────────
+        function checkoutCart() {
+            if (!cart.length) {
+                showToast('Tu carrito está vacío.', 'error');
+                return;
+            }
+
+            let subtotal = 0;
+            let msg = '¡Hola SillasPro Elite! Me gustaría realizar el siguiente pedido:\n\n';
+            cart.forEach(item => {
+                const lineTotal = item.price * item.quantity;
+                subtotal += lineTotal;
+                msg += `🛒 *${item.name}*\n   Cantidad: ${item.quantity}  ·  Precio: $${item.price.toFixed(2)}  ·  Subtotal: $${lineTotal.toFixed(2)}\n\n`;
+            });
+            const tax   = subtotal * 0.19;
+            const total = subtotal + tax;
+            msg += `---\nSubtotal: $${subtotal.toFixed(2)}\nIVA (19%): $${tax.toFixed(2)}\n💰 *Total: $${total.toFixed(2)}*\n\nQuedo a la espera de confirmar disponibilidad y forma de pago. ¡Gracias!`;
+
+            const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+            toggleCartDrawer(false);
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            showToast('Abriendo WhatsApp con tu pedido…');
+        }
+
+
+        // ── 6. SEARCH ───────────────────────────────────────────────────
+        function openSearchModal() {
+            const modal = document.getElementById('search-modal');
+            const input = document.getElementById('search-input');
+            modal.classList.add('open');
+            document.getElementById('search-modal-panel').style.transform = '';
+            input.value = '';
+            setTimeout(() => input.focus(), 100);
+            performSearch();
+        }
+
+        function closeSearchModal() {
+            document.getElementById('search-modal').classList.remove('open');
+        }
+
+        function performSearch() {
+            const query     = document.getElementById('search-input').value.trim().toLowerCase();
+            const container = document.getElementById('search-results');
+            if (!query) {
+                container.innerHTML = '<div class="text-center py-8 text-xs text-ink-faint">Escribe para buscar…</div>';
+                return;
+            }
+            const results = PRODUCTS.filter(p =>
+                p.name.toLowerCase().includes(query) ||
+                p.description.toLowerCase().includes(query)
+            );
+            if (!results.length) {
+                container.innerHTML = `<div class="text-center py-8 space-y-2"><span class="material-symbols-outlined text-3xl text-ink-faint opacity-40">search_off</span><p class="text-xs text-ink-muted dark:text-d-muted">Sin resultados para "${query}".</p></div>`;
+                return;
+            }
+            let html = '<div class="space-y-1">';
+            results.forEach(p => {
+                html += `
+                    <div class="flex items-center justify-between p-3 rounded-xl hover:bg-cream dark:hover:bg-d-elevated transition-colors cursor-pointer group">
+                        <div class="flex items-center gap-3 flex-grow min-w-0 mr-3" onclick="closeSearchModal();openProductPreview(${p.id})">
+                            <img src="${p.image}" alt="${p.name}" class="w-11 h-11 object-cover rounded-lg bg-cream flex-shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-xs font-semibold text-ink dark:text-d-text truncate">${p.name}</h4>
+                                <p class="text-[11px] text-ink-faint line-clamp-1">${p.description}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 flex-shrink-0">
+                            <span class="text-xs font-bold text-gold">$${p.price.toFixed(2)}</span>
+                            <button onclick="addToCart(${p.id});closeSearchModal();" class="bg-ink dark:bg-gold text-white dark:text-ink p-2 rounded-lg hover:bg-gold hover:text-ink transition-all" aria-label="Añadir">
+                                <span class="material-symbols-outlined text-[14px]">shopping_bag</span>
+                            </button>
+                        </div>
+                    </div>`;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+
+        // ── 7. COMING SOON MODAL ────────────────────────────────────────
+        function triggerSectionComingSoon(name) {
+            document.getElementById('coming-soon-section-name').textContent = name;
+            document.getElementById('coming-soon-modal').classList.add('open');
+        }
+
+        function closeComingSoonModal() {
+            document.getElementById('coming-soon-modal').classList.remove('open');
+        }
+
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('subscribe-email') || document.getElementById('footer-email');
+            const email = emailInput ? emailInput.value.trim() : '';
+            if (email) {
+                showToast(`¡Suscrito! Notificaremos a: ${email}`);
+                if (emailInput) emailInput.value = '';
+                closeComingSoonModal();
+            }
+        }
+
+
+        // ── 8. PRODUCT PREVIEW ──────────────────────────────────────────
+        function openProductPreview(productId) {
+            const product   = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+            const modal     = document.getElementById('product-preview-modal');
+            const container = document.getElementById('product-preview-content');
+
+            container.innerHTML = `
+                <button onclick="closeProductPreview()" class="absolute top-4 right-4 z-10 p-2 bg-white/80 dark:bg-d-surface/80 hover:bg-white dark:hover:bg-d-surface rounded-full shadow-md transition-colors text-ink dark:text-d-text">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 h-64 md:h-auto relative bg-cream dark:bg-d-elevated overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                        ${product.badge ? `<span class="absolute top-4 left-4 bg-gold text-ink text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">${product.badge}</span>` : ''}
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-mono font-semibold text-gold uppercase tracking-[0.2em] block mb-2">Producto Destacado</span>
+                            <h3 class="font-serif text-2xl font-semibold text-ink dark:text-d-text mb-2">${product.name}</h3>
+                            <p class="font-serif text-3xl text-gold font-semibold mb-5">$${product.price.toFixed(2)}</p>
+                            <div class="h-px bg-cream-dark dark:bg-d-border mb-5"></div>
+                            <p class="text-sm text-ink-muted dark:text-d-muted leading-relaxed mb-6">${product.description}</p>
+                        </div>
+                        <div class="space-y-2.5">
+                            <button onclick="addToCart(${product.id});closeProductPreview();"
+                                class="w-full flex items-center justify-center gap-2 bg-ink dark:bg-gold text-white dark:text-ink py-3.5 rounded-xl font-semibold text-sm hover:bg-gold hover:text-ink transition-all shadow-md active:scale-[0.98]">
+                                <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                Añadir al Carrito
+                            </button>
+                            <button onclick="closeProductPreview();triggerSectionComingSoon('Compra Directa: ${product.name}');"
+                                class="w-full border border-ink/15 dark:border-d-border text-ink dark:text-d-text py-3 rounded-xl font-semibold text-sm hover:bg-cream dark:hover:bg-d-elevated transition-colors">
+                                Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+
+            modal.classList.add('open');
+        }
+
+        function closeProductPreview() {
+            document.getElementById('product-preview-modal').classList.remove('open');
+        }
+
+
+        // ── 9. INTERSECTION OBSERVER ────────────────────────────────────
+        const sectionNames = {
+            'categorias': 'Categorías',
+            'productos':  'Productos',
+            'servicios':  'Servicios',
+            'reseñas':    'Reseñas',
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (!entry.target.dataset.notified) {
+                        const name = sectionNames[entry.target.id];
+                        if (name) showToast(`Sección: ${name}`, 'info');
+                        entry.target.dataset.notified = 'true';
+                    }
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
+        // ── 10. GLOBAL ESC / CLICK-OUTSIDE ─────────────────────────────
+        window.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            closeComingSoonModal();
+            closeSearchModal();
+            closeProductPreview();
+            toggleCartDrawer(false);
+            toggleMobileMenu(false);
+        });
+
+        // Click-outside closers for overlays
+        ['coming-soon-modal', 'search-modal', 'product-preview-modal'].forEach(id => {
+            document.getElementById(id).addEventListener('click', function(e) {
+                if (e.target === this) {
+                    if (id === 'coming-soon-modal')    closeComingSoonModal();
+                    else if (id === 'search-modal')    closeSearchModal();
+                    else if (id === 'product-preview-modal') closeProductPreview();
+                }
+            });
+        });
+        document.getElementById('cart-drawer').addEventListener('click', function(e) {
+            if (e.target === this) toggleCartDrawer(false);
+        });
+        document.getElementById('mobile-menu').addEventListener('click', function(e) {
+            if (e.target === this) toggleMobileMenu(false);
+        });
+
+
+        // ── 11. INIT ────────────────────────────────────────────────────
+        updateCartBadge();
+    </script>
+</body>
+</html>

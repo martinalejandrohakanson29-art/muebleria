@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "SillasPro Elite",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js"],
+      "port": 3001,
+      "autoPort": false,
+      "env": { "PORT": "3001" }
+    }
+  ]
+}
