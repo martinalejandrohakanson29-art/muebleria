@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>SillasPro Elite — Confort y Estilo para tu Espacio</title>
+    <title>S.O.S SILLAS</title>
     <meta name="description" content="Tienda especializada en sillería ergonómica de élite, escritorios y muebles de oficina premium. Servicio de reparación y restauración profesional con garantía certificada.">
     <meta name="keywords" content="sillas ergonómicas, escritorios, muebles de oficina, sillones ejecutivos, ergonomía, SillasPro Elite">
     <meta name="author" content="SillasPro Elite">
@@ -91,10 +91,19 @@
         .hero-overlay {
             background: linear-gradient(
                 105deg,
-                rgba(20, 16, 12, 0.80) 0%,
-                rgba(28, 25, 23, 0.55) 50%,
-                rgba(20, 16, 12, 0.20) 100%
+                rgba(10, 5, 5, 0.88) 0%,
+                rgba(20, 10, 10, 0.70) 50%,
+                rgba(10, 5, 5, 0.40) 100%
             );
+        }
+        .hero-brand {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 900;
+            color: #E02020;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            text-shadow: 0 4px 32px rgba(220, 20, 20, 0.45), 0 2px 8px rgba(0,0,0,0.6);
+            font-family: 'DM Sans', sans-serif;
         }
 
         /* ── Trust badges strip ────────────────────────────── */
@@ -322,26 +331,23 @@
         <section class="relative w-full h-[600px] md:h-[680px] flex items-center overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOVYiskN2FI3t1Efq3r6ANgFBv0i6CerVDKotYNr0oUB1ftAIvLESRM7R3DYD0UsnCQoKD_D0tKBktLRi277zOkkCzW1cDb2ANFs1AXyLgcsi3uCmHxsYxip970g-Ju5BalP0vEvtF8ocjohDHVxaZLYo_V3RFwEC3LyLFJ1zsctVJ8bf0AOKj70fnV7RfVqXArsJeFTEmlwOmNtSd1OOTDhIpKVIR58xwqdbpZh31YsWQKQLJNQFHEKF6RFx7znNIUcAWOV1mD6k"
-                     alt="Oficina moderna" class="w-full h-full object-cover object-center">
+                     alt="Muebles y sillas" class="w-full h-full object-cover object-center">
                 <div class="absolute inset-0 hero-overlay"></div>
                 <!-- Grain texture overlay -->
-                <div class="absolute inset-0 opacity-[0.03]" style="background-image:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\"); background-repeat: repeat; background-size: 128px;"></div>
+                <div class="absolute inset-0 opacity-[0.04]" style="background-image:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\"); background-repeat: repeat; background-size: 128px;"></div>
             </div>
 
             <div class="relative z-10 w-full max-w-[1280px] mx-auto px-5 md:px-10">
-                <div class="max-w-[640px]">
-                    <span class="title-rule text-gold/80 mb-5 block">Colección 2026</span>
-                    <h1 class="font-serif text-[2.6rem] md:text-[3.5rem] lg:text-[4rem] text-white leading-[1.15] font-semibold mb-6 drop-shadow-md">
-                        Confort de Élite<br>
-                        <em class="not-italic text-gold-light">para tu Espacio</em>
-                    </h1>
-                    <p class="text-white/85 text-base md:text-lg mb-10 max-w-[480px] leading-relaxed font-light">
-                        Sillería ergonómica de última generación. Diseño técnico que transforma tu entorno de trabajo con garantía certificada.
+                <div class="max-w-[760px]">
+                    <p class="text-white/60 text-xs font-mono tracking-[0.25em] uppercase mb-6">Expertos en sillería · Desde 2010</p>
+                    <h1 class="hero-brand mb-5">S.O.S SILLAS</h1>
+                    <p class="text-white/80 text-base md:text-lg mb-10 max-w-[480px] leading-relaxed font-light">
+                        Tu solución en sillas y muebles de oficina. Calidad, confort y estilo para cada espacio.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         <button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})"
-                            class="flex items-center gap-2 bg-gold text-ink px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold-light transition-all shadow-lg hover:shadow-xl active:scale-95">
-                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+                            class="flex items-center gap-2 bg-[#E02020] text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-red-700 transition-all shadow-lg hover:shadow-xl active:scale-95">
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">chair</span>
                             Ver Productos
                         </button>
                         <button onclick="triggerSectionComingSoon('Agendar Consulta')"
@@ -466,7 +472,7 @@
                                 <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Soporte lumbar ajustable · malla premium transpirable</p>
                             </div>
                             <div>
-                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$120<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">Consultar precio</p>
                                 <button onclick="addToCart(1)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
                                     <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
                                     Añadir al Carrito
@@ -487,7 +493,7 @@
                                 <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Madera de roble natural escandinavo · diseño minimalista</p>
                             </div>
                             <div>
-                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$180<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">Consultar precio</p>
                                 <button onclick="addToCart(2)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
                                     <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
                                     Añadir al Carrito
@@ -508,7 +514,7 @@
                                 <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Cuero genuino acolchado · base giratoria metálica robusta</p>
                             </div>
                             <div>
-                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$250<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">Consultar precio</p>
                                 <button onclick="addToCart(3)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
                                     <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
                                     Añadir al Carrito
@@ -530,7 +536,7 @@
                                 <p class="text-xs text-ink-faint dark:text-d-muted mb-4 leading-relaxed">Ergonomía de alta resistencia · cojines lumbares · 180°</p>
                             </div>
                             <div>
-                                <p class="font-serif text-2xl text-gold font-semibold mb-3">$150<span class="text-sm font-sans font-normal text-ink-faint">.00</span></p>
+                                <p class="font-serif text-2xl text-gold font-semibold mb-3">Consultar precio</p>
                                 <button onclick="addToCart(4)" class="w-full flex items-center justify-center gap-2 border border-ink/20 dark:border-d-border text-ink dark:text-d-text py-2.5 rounded-xl text-xs font-semibold hover:bg-ink hover:text-white dark:hover:bg-gold dark:hover:text-ink hover:border-transparent transition-all duration-200">
                                     <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
                                     Añadir al Carrito
